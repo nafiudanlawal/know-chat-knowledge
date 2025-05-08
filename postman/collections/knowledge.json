@@ -1,0 +1,1491 @@
+{
+	"info": {
+		"_postman_id": "37c2e1c5-65c6-4ff1-9397-2334064cdab0",
+		"name": "knowledge",
+		"description": "This is the api spec for know-chat\n\nContact Support:\n Email: nafiudanlawal@gmail.com.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "8935962-37c2e1c5-65c6-4ff1-9397-2334064cdab0"
+	},
+	"item": [
+		{
+			"name": "documents",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/documents/:id",
+							"id": "bf8d475e-2be8-495a-8e20-bc195665f6e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/documents/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "exercitation2,deserunt ex esse incididunt,in_2cb,-28971127.105820045,sed_,-40823900,est_b,74467863.00619435,reprehenderit_ad,veniam adipisicing consectetur do ex",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "5f6d4c42-7f20-4b24-93b5-e42a73acfc7c",
+									"name": "success response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "75eeee71-ddfb-4018-a9ff-f0b97fe0c791"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"data\": {\n    \"type\": \"text\",\n    \"file_url\": \"<string>\",\n    \"content\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}"
+								},
+								{
+									"id": "0bff1995-fbb3-4275-be07-31740fc974a9",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "43e996c8-6eba-4794-9cd3-21c143765ee5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "9c08b078-bc07-4bbc-96b4-5502294d27b7",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "89246719-db5e-4857-8a6c-6382126399f0"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "01ab93f9-e587-4fca-ac1f-25eb8116fd4b",
+									"name": "response for server errors",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "cd8e52eb-01f8-4781-a9ec-044cbbcf85f4"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/documents/:id",
+							"id": "440516fb-ea7c-4a2a-aeb2-72908049b924",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "exercitation2,deserunt ex esse incididunt,in_2cb,-28971127.105820045,sed_,-40823900,est_b,74467863.00619435,reprehenderit_ad,veniam adipisicing consectetur do ex",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "1076fa90-2b00-41fe-b810-c262be26bfa1",
+									"name": "success response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "6cb8b98d-73d0-43da-a2df-8e4491d4c6b9"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"data\": {\n    \"type\": \"text\",\n    \"file_url\": \"<string>\",\n    \"content\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}"
+								},
+								{
+									"id": "e372474f-d612-42f0-9e1a-c6c7547a3ea2",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "9b8c77f0-a532-45de-bfab-97fe43da8c16"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "91e12a4f-b759-4efa-a445-52cbd5202961",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "8e7c44f8-2d4d-4eab-87d3-5a92321e341a"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "1cb63a4e-35f3-4f5d-bafc-c78bef855b66",
+									"name": "response for server errors",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "dd9b44b6-63fa-4c05-8cd8-7b8d8344ced7"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/documents/:id",
+							"id": "5cc83bbd-6b1b-4f4e-8388-c3d9b5373ccf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"description": "type of document craetion (This can only be one of file,text)",
+											"key": "type",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"description": "text content for text type",
+											"key": "content",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"description": "name of document",
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "exercitation2,deserunt ex esse incididunt,in_2cb,-28971127.105820045,sed_,-40823900,est_b,74467863.00619435,reprehenderit_ad,veniam adipisicing consectetur do ex",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "cdc3e1b2-1f0d-4851-b324-389b7f4e881a",
+									"name": "success response",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"description": "type of document craetion (This can only be one of file,text)",
+													"key": "type",
+													"value": "file",
+													"type": "text"
+												},
+												{
+													"description": "text content for text type",
+													"key": "content",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": "name of document",
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "468f35ef-806b-4445-8bca-7daeffb24a68"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"data\": {\n    \"type\": \"text\",\n    \"file_url\": \"<string>\",\n    \"content\": \"<string>\",\n    \"name\": \"<string>\"\n  }\n}"
+								},
+								{
+									"id": "8c5e77cc-594c-48de-8ca0-35bd0912d472",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"description": "type of document craetion (This can only be one of file,text)",
+													"key": "type",
+													"value": "file",
+													"type": "text"
+												},
+												{
+													"description": "text content for text type",
+													"key": "content",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": "name of document",
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "a938819c-93c6-45e5-a60f-90df6a04d3ef"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "76f46642-8260-4263-a7f8-363ee2d9d49d",
+									"name": "response for unauthorized access",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"description": "type of document craetion (This can only be one of file,text)",
+													"key": "type",
+													"value": "file",
+													"type": "text"
+												},
+												{
+													"description": "text content for text type",
+													"key": "content",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": "name of document",
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "e0c372d1-c358-44d8-b579-29f28c2387a3"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"id": "9bec8721-3812-4efe-8a25-520560a7ece4",
+									"name": "response for server errors",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"description": "Added as a part of security scheme: bearer",
+												"key": "Authorization",
+												"value": "Bearer <token>"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"description": "type of document craetion (This can only be one of file,text)",
+													"key": "type",
+													"value": "file",
+													"type": "text"
+												},
+												{
+													"description": "text content for text type",
+													"key": "content",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"description": "name of document",
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/documents/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"documents",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"uuid": "f02a99a3-d6ed-4b4c-a72a-1a10c4f43ca0"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "2d6adc4c-a70a-4836-8064-bc84f2e783f8"
+				},
+				{
+					"name": "/documents/",
+					"id": "71a069db-751f-44a3-a345-f9b2185ef6bf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"description": "type of document craetion (This can only be one of file,text)",
+									"key": "type",
+									"value": "file",
+									"type": "text"
+								},
+								{
+									"description": "text content for text type",
+									"key": "content",
+									"value": "<string>",
+									"type": "text"
+								},
+								{
+									"description": "name of document",
+									"key": "name",
+									"value": "<string>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/documents/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"documents",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "30b25a34-f8ef-4cbe-9c87-886cecef5d9d",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"description": "type of document craetion (This can only be one of file,text)",
+											"key": "type",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"description": "text content for text type",
+											"key": "content",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"description": "name of document",
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "ef6f053f-4e65-4765-a559-3b9dd98f97f8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"file\",\n  \"file_url\": \"<string>\",\n  \"content\": \"<string>\",\n  \"name\": \"<string>\"\n}"
+						},
+						{
+							"id": "d15aa7dc-6184-4cee-96d5-2d0279a39070",
+							"name": "response for input or validation errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"description": "type of document craetion (This can only be one of file,text)",
+											"key": "type",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"description": "text content for text type",
+											"key": "content",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"description": "name of document",
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "9fda1464-3b32-45a7-93f9-73aefb5d7def"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "6613dcd8-496d-413d-aae7-7e21c38b5435",
+							"name": "response for unauthorized access",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"description": "type of document craetion (This can only be one of file,text)",
+											"key": "type",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"description": "text content for text type",
+											"key": "content",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"description": "name of document",
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "372b526b-cb9e-43a2-9fe1-90d2be459c12"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "709ad698-2aa5-4b21-a8df-69ff5a43d0fc",
+							"name": "response for server errors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"description": "type of document craetion (This can only be one of file,text)",
+											"key": "type",
+											"value": "file",
+											"type": "text"
+										},
+										{
+											"description": "text content for text type",
+											"key": "content",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"description": "name of document",
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/documents/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "e5b8bd2b-bc1c-4db4-9396-c1c2f123d13b"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/documents/",
+					"id": "f243b202-fc6d-41bf-9c35-6c4e3c8df1c6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"documents",
+								""
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "<integer>",
+									"description": "skip the items before this number"
+								},
+								{
+									"key": "limit",
+									"value": "<integer>",
+									"description": "number of items to retrive default is 10"
+								},
+								{
+									"key": "page",
+									"value": "<integer>",
+									"description": "page to retrive default is 0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "469bccf4-5d8f-4f7b-86bb-3d843a987343",
+							"name": "success response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									],
+									"query": [
+										{
+											"description": "skip the items before this number",
+											"key": "offset",
+											"value": "<integer>"
+										},
+										{
+											"description": "number of items to retrive default is 10",
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"description": "page to retrive default is 0",
+											"key": "page",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "cf0c76df-022c-413b-9b2d-0c785d63f08c"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"data\": [\n    {\n      \"type\": \"text\",\n      \"file_url\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"type\": \"file\",\n      \"file_url\": \"<string>\",\n      \"content\": \"<string>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}"
+						},
+						{
+							"id": "e6930a86-6753-4db8-8708-896b69237d44",
+							"name": "response for input or validation errors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									],
+									"query": [
+										{
+											"description": "skip the items before this number",
+											"key": "offset",
+											"value": "<integer>"
+										},
+										{
+											"description": "number of items to retrive default is 10",
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"description": "page to retrive default is 0",
+											"key": "page",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "a1698a9a-e6ee-42e0-b74f-6c5c80a59ed2"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "0c833a8f-1a57-4825-b74c-2f55b8bf95ba",
+							"name": "response for unauthorized access",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									],
+									"query": [
+										{
+											"description": "skip the items before this number",
+											"key": "offset",
+											"value": "<integer>"
+										},
+										{
+											"description": "number of items to retrive default is 10",
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"description": "page to retrive default is 0",
+											"key": "page",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "1555aca1-33a4-4a2b-98b1-78fd3a2b733d"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"id": "1873b724-dcfb-4d34-8687-9a8fd5e7c13e",
+							"name": "response for server errors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"description": "Added as a part of security scheme: bearer",
+										"key": "Authorization",
+										"value": "Bearer <token>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"documents",
+										""
+									],
+									"query": [
+										{
+											"description": "skip the items before this number",
+											"key": "offset",
+											"value": "<integer>"
+										},
+										{
+											"description": "number of items to retrive default is 10",
+											"key": "limit",
+											"value": "<integer>"
+										},
+										{
+											"description": "page to retrive default is 0",
+											"key": "page",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"uuid": "8481af72-c08f-4a6b-be45-da540d998ee3"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<boolean>\",\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"id": "a7f46ae4-8079-4087-af6f-53fdd6c8ee34"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"id": "0976b0f2-8e1b-4ece-8cda-b7f761aed143",
+			"key": "protocol",
+			"value": "http"
+		},
+		{
+			"id": "f8297347-b695-49bb-9aa9-82c1027f7b01",
+			"key": "baseUrl",
+			"value": "http:localhost:8000/api/v1"
+		}
+	]
+}

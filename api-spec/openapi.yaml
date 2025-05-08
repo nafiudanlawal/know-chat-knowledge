@@ -1,0 +1,33 @@
+
+openapi: "3.0.2"
+servers:
+  - url: "http:localhost:8000/api/v1"
+    variables:
+      protocol:
+        default: http
+        enum:
+          - "https"
+          - "http"
+info:
+    title: "KnowChat API"
+    description: "This is the api spec for know-chat"
+    version: "1.0"
+    termsOfService: "https://nafiudanlawal.github.io"
+    contact:
+      email: "nafiudanlawal@gmail.com.com"
+    license:
+      name: "MIT"
+      url: "https://nafiudanlawal.github.io"
+
+paths:
+    $ref: "paths.yaml"            
+components:
+  $ref: "component.yaml"
+
+security:
+  - bearerAuth: []
+    
+
+            
+        
+    

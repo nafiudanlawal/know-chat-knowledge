@@ -1,0 +1,183 @@
+/documents/:
+  post:
+    tags:
+      - "documents"
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            properties:
+              type:
+                description: "type of document craetion"
+                type: string
+                enum: 
+                  - file
+                  - text
+              file:
+                description: "support for only pdf"
+                type: array
+                items: {}
+              content:
+                description: "text content for text type"
+                type: string
+              name: 
+                type: string
+                description: "name of document"
+          example:
+            type: file
+            file: fileObject
+            name: customer
+            content: "This is an example text"
+              
+    responses:
+      400:
+        $ref: "component.yaml#/responses/badRequest"
+      401:
+        $ref: "component.yaml#/responses/accessDenied"
+      500:
+        $ref: "component.yaml#/responses/serverError"
+      201:
+        description: "success"
+        content:
+          application/json:
+            schema:
+              $ref: "openapi.yaml#/components/schemas/document"
+            examples:
+              successResponse:
+                  summary: "success response"
+                  value:
+                    -
+                      status: true
+                      message: "document created"
+                      data:
+                        name: customer
+                        file_url: http://example.com/file.pdf
+                    -    
+                      status: true
+                      message: "document created"
+                      data:
+                        name: customer
+                        file_url: "text_content...."
+  get:
+      parameters:
+        - name: offset
+          description: skip the items before this number
+          schema:
+              type: integer
+          in: query
+          required: false
+        - name: limit
+          description: number of items to retrive default is 10
+          schema:
+              type: integer
+          in: query
+          required: false
+        - name: page
+          description: page to retrive default is 0
+          schema:
+              type: integer
+          in: query
+          required: false
+      tags:
+          - "documents"
+      responses:
+          200:
+            $ref: "component.yaml#/responses/documentArray"
+          400:
+            $ref: "component.yaml#/responses/badRequest"
+          401:
+            $ref: "component.yaml#/responses/accessDenied"
+          500:
+            $ref: "component.yaml#/responses/serverError"
+/documents/{id}:
+  get:
+    parameters:
+      - in: path
+        required: true
+        name: id
+        schema: 
+            additionalProperties: true
+      
+    tags:
+        - "documents"
+    responses:
+        200:
+          $ref: "component.yaml#/responses/documentObject"
+        401:
+          $ref: "component.yaml#/responses/accessDenied"
+        404:
+            $ref: "component.yaml#/responses/resourceNotFound"
+        500:
+          $ref: "component.yaml#/responses/serverError"
+  patch:
+    parameters:
+        - name: id
+          in : path
+          required: true
+          schema: 
+            additionalProperties: true
+
+    tags:
+      - "documents"
+    requestBody:
+        content: 
+            application/json:
+                schema:
+                    type: object
+                    properties:
+                      name: 
+                        type: string    
+    responses:
+      200:
+        $ref: "component.yaml#/responses/documentObject"
+      401:
+        $ref: "component.yaml#/responses/accessDenied"
+      404:
+          $ref: "component.yaml#/responses/resourceNotFound"
+      500:
+        $ref: "component.yaml#/responses/serverError"
+  put:
+    parameters:
+        - name: id
+          in : path
+          required: true
+          schema: 
+            additionalProperties: true
+
+    tags:
+      - "documents"
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            properties:
+              type:
+                description: "type of document craetion"
+                type: string
+                enum: 
+                  - file
+                  - text
+              file:
+                description: "support for only pdf"
+                type: array
+                items: {}
+              content:
+                description: "text content for text type"
+                type: string
+              name: 
+                type: string
+                description: "name of document"
+          example:
+            type: file
+            file: fileObject
+            name: customer
+            content: "This is an example text"  
+    responses:
+      200:
+        $ref: "component.yaml#/responses/documentObject"
+      401:
+        $ref: "component.yaml#/responses/accessDenied"
+      404:
+          $ref: "component.yaml#/responses/resourceNotFound"
+      500:
+        $ref: "component.yaml#/responses/serverError"

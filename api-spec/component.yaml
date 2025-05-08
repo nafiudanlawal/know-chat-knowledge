@@ -1,0 +1,150 @@
+requestBodies:
+  PatchDocument:
+    content: 
+      name:
+        schema:
+          type: string
+          description: "name of document"
+securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: "Authorization token from auth server"
+      
+
+schemas:
+  SuccessResponse:
+    type: object
+    properties:
+      status: 
+        type: string
+        description: description of status
+      resonseCode:
+        type: number
+  document:
+      type: object
+      properties:
+        type:
+          type: string
+          description: "shows whether document is by file upload or text content"
+          enum:
+            - file
+            - text
+        file_url:
+          description: "url for "
+          type: string
+        content:
+          type: string
+        name:
+          type: string
+
+responses:
+  documentArray:
+    description: "success response"
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status: 
+              type: boolean
+            message: 
+              type: string
+            data:
+              type: array
+              items:
+                $ref: "#/schemas/document"
+        example:
+            message: success
+            status: true
+            data: 
+              - name: "doc name here"
+                type: "text"
+                content: "this is the text"
+                file_url: ""
+              - name: "doc name"
+                type: "file"
+                content: ""
+                file_url: "http://test.com"
+              
+  documentObject:
+    description: "success response"
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status: 
+              type: boolean
+            message: 
+              type: string
+            data:
+              $ref: "#/schemas/document"
+        example:
+            message: success
+            status: true
+            data:
+              name: "doc name"
+              type: "content"
+              content: "this is the text"
+
+
+          
+  accessDenied:
+    description: "response for unauthorized access"
+    content:
+      application/json:
+          schema:
+            type: object
+            properties:
+              status: 
+                type: boolean
+              message: 
+                type: string
+          example:
+            message: Access denied
+            error_code: 401
+  serverError:
+    description: "response for server errors"
+    content:
+      application/json:
+          schema:
+            type: object
+            properties:
+              status: 
+                type: boolean
+              message: 
+                type: string
+          example:
+            message: Server error
+            error_code: 500
+  badRequest:
+    description: "response for input or validation errors"
+    content:
+      application/json:
+          schema:
+            type: object
+            properties:
+              status: 
+                type: boolean
+              message: 
+                type: string
+          example:
+            message: Bad request
+            error_code: 400
+  resourceNotFound:
+    description: "response for unauthorized access"
+    content:
+      application/json:
+          schema:
+            type: object
+            properties:
+              status: 
+                type: boolean
+              message: 
+                type: string
+          example:
+            message: Not found
+            error_code: 404
+
