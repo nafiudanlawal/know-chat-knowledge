@@ -20,7 +20,7 @@ info:
       url: "https://nafiudanlawal.github.io"
 
 paths:
-    $ref: "paths.yaml"            
+  $ref: "paths.yaml"            
 components:
   $ref: "component.yaml"
 

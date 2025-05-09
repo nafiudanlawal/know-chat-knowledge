@@ -23,3 +23,8 @@ go.work.sum
 
 # env file
 .env
+.env.test
+.env.dev
+/tmp
+/uploads/*
+!/uploads/t
