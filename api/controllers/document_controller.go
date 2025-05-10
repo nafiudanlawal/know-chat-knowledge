@@ -1,9 +1,6 @@
 package controllers
 
 import (
-	"fmt"
-	"log"
-
 	"github.com/gofiber/fiber/v3"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
@@ -30,6 +27,7 @@ func NewDocumentController(db *gorm.DB) *DocumentController {
 
 // CreateDocument handles the creation of a new document
 func (c *DocumentController) CreateDocument(ctx fiber.Ctx) error {
+	ctx.AcceptsEncodings("compress", "br")
 	// Parse multipart form
 	form, err := ctx.MultipartForm()
 	if err != nil {
@@ -40,8 +38,6 @@ func (c *DocumentController) CreateDocument(ctx fiber.Ctx) error {
 	docType := ctx.FormValue("type")
 	name := ctx.FormValue("name")
 	content := ctx.FormValue("content")
-	file := ctx.FormValue("file")
-	fmt.Println(docType, name, content, file)
 
 	if err := validators.ValidateCreateDocument(docType, name, content, form.File["file"]); err != nil {
 		return fiber.NewError(fiber.StatusBadRequest, err.Error())
@@ -54,16 +50,6 @@ func (c *DocumentController) CreateDocument(ctx fiber.Ctx) error {
 	switch docType {
 
 	case "file":
-		// Process file upload
-		files := form.File["documents"]
-		// => []*multipart.FileHeader
-		log.Println("documents count", len(files))
-		fmt.Println("documents count", len(files))
-		// Loop through files:
-		for _, file := range files {
-			log.Fatal(file.Filename, file.Size, file.Header["Content-Type"][0])
-		}
-
 		file, err := ctx.FormFile("file")
 		if err != nil {
 			return fiber.NewError(fiber.StatusBadRequest, "File upload error: "+err.Error())
