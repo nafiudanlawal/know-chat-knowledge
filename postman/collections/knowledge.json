@@ -896,14 +896,20 @@
 								{
 									"description": "text content for text type",
 									"key": "content",
-									"value": "<string>",
+									"value": "This is okay with a file",
 									"type": "text"
 								},
 								{
 									"description": "name of document",
 									"key": "name",
-									"value": "<string>",
+									"value": "test doc file1",
 									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"uuid": "d0f88c55-5b17-411c-86fa-e8c639e1a05d",
+									"src": "postman-cloud:///1f02cf96-1f15-4490-a981-7ecd6ede62ae"
 								}
 							]
 						},
@@ -1204,30 +1210,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/documents/?offset=<integer>&limit=<integer>&page=<integer>",
+							"raw": "{{baseUrl}}/documents/",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"documents",
 								""
-							],
-							"query": [
-								{
-									"key": "offset",
-									"value": "<integer>",
-									"description": "skip the items before this number"
-								},
-								{
-									"key": "limit",
-									"value": "<integer>",
-									"description": "number of items to retrive default is 10"
-								},
-								{
-									"key": "page",
-									"value": "<integer>",
-									"description": "page to retrive default is 0"
-								}
 							]
 						}
 					},
